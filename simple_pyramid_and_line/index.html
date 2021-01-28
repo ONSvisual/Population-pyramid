@@ -23,10 +23,10 @@ body,
       font-family: 'Open Sans', sans-serif;
     }
     h6 {
-       font-size: 16px;
-       margin: 16px 0 8px 0;
-       font-weight: 700;
-       color:#323132;
+      font-size: 16px;
+      margin: 16px 0 8px 0;
+      font-weight: 700;
+      color: #323132;
     }
     #chartHeading {
       font-size: 14px;
@@ -50,6 +50,9 @@ h5 {
  color:#323132;
 }
 
+#graphic .axis {
+    font-family: 'Open Sans';
+}
 
 .visuallyhidden {
    position: absolute;
@@ -69,9 +72,9 @@ h5 {
     <h5 id="screenreadertext">The chart canvas is hidden from screen readers. The main message is summarised by the chart title and the data behind the chart is available to download below.</h5>
   </div>
 	<div id="graphic" aria-hidden="true"></div>
-
+<div class="footer">
     <h6 id="source"></h6>
-
+</div>
       <!-- <h6>Notes:</h6>
            <ol>
              <li>The median number of days spent in the UK is highlighted.</li>
@@ -119,7 +122,7 @@ h5 {
 					var chart_width = parseInt(graphic.style("width")) - margin.left - margin.right;
 		      var height = Math.ceil((chart_width * dvc.optional.aspectRatio_lg[1]) / dvc.optional.aspectRatio_lg[0]) - margin.top - margin.bottom;
 			}
-console.log(size)
+//console.log(size)
 			if (chart_width + margin.left + margin.right > 550) {
         maxWidth = 550;
         chart_width = maxWidth - margin.left - margin.right
@@ -129,8 +132,7 @@ console.log(size)
 
       // clear out existing graphics
       graphic.selectAll("*").remove();
-      keypoints.selectAll("*").remove();
-      footer.selectAll("*").remove();
+    footer.empty();
 
 
 			 // parse data into columns
@@ -330,7 +332,7 @@ console.log(size)
             if(d.index-1 >=0){
 
               pathData2=pathData2+"L "+(x1(d[names[4]]))+" "+y(d.index)+" L "+x1(d[names[4]])+" "+y(d.index-1);
-              console.log("L "+((d[names[4]]))+" "+(d.index)+" L "+(d[names[4]])+" "+(d.index-1))
+          //    console.log("L "+((d[names[4]]))+" "+(d.index)+" L "+(d[names[4]])+" "+(d.index-1))
             } else {
               pathData2=pathData2+"L "+(x1(d[names[4]]))+" "+y(d.index)+" L "+x1(d[names[4]])+" "+height
             }

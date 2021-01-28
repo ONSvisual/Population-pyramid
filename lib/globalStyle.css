@@ -95,7 +95,7 @@ a:active {
 /* required */
   {
   fill: none;
-  stroke: #ccc;
+  /* stroke: #ccc; */
   shape-rendering: crispEdges;
 }
 
